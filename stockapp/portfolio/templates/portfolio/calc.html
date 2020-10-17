@@ -4,7 +4,7 @@
     <body>
      <form action="/calc" method="POST">
         <table>
-           
+           {% csrf_token %}
             {{form.as_table}}
         </table>
         <tl><td colspan="2" align="center">
@@ -13,5 +13,6 @@
 
             </td></tr>
         </form>
+        <a href="/">Back</a></div>
     </body>
 </html>
