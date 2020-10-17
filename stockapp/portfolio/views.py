@@ -6,7 +6,7 @@ def home(request):
     context = { 'username': 'Ian Studmeyer'}
     return render( request, 'portfolio/home.html', context)
 
-def calcome(request):
+def calc(request):
     if request.method == "GET":
         form = CalcForm()
         context = { 'form': form}
