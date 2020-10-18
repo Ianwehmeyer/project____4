@@ -6,5 +6,25 @@
         <div>
             <a href="/calc">calc</a></div>
         </div>
+            <div><a href="/ajaxform">Ajax Form</a></div>
+            <div><a href="/createUser">Create User</a></div>
+            <div><a href="/deleteUser">Delete User</a></div>
+            <div><a href="/login">Login</a></div>
+            <div><a href="/logout">Logout</a></div>
+        <h2>{{message}}</h2>
+        {% if user.isauthenticated%}
+            <div>User is authenticated</div>
+        {% else %}
+            <div>User is NOT authenticated</div>
+        {% endif %}
+        <form>
+            {{myajaxform.as_p}}
+            <div>
+                <input type="text" id="result" />
+            </div>
+            <div>
+                <button type="button">Submit</button>
+            </div>
+        </form>
     </body>
 </html>
