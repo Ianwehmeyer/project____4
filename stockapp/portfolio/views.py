@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CalcForm
 from .forms import MyAjaxForm 
 from .models import Account
+from django.http import HttpResponse
+from django.contrib.auth import authenticate, logout, login
 
 # Create your views here.
 def home(request):
@@ -32,3 +34,18 @@ def calc(request):
         form = CalcForm()
         context = { 'form': form}
         return render( request, 'portfolio/calc.html', context)
+
+#for login
+def handleAjax( request):
+    name = request.POST['name'];
+    print('name=' + name)
+    return HttpResponse('hello ' + name)
+def login_view( request):
+    user = authenticate( request, username='root', password='root')
+    if user is not None:
+        print('username is authenticated')
+        login( request, user)
+        return redirect('/')
+def logout_view( request):
+    logout(request)
+    return redirect('/')
