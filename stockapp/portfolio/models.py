@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Account( models.Model):
-    balance = models. DecimalField(max_digits=20, decimal_places=2);
+    balance = models.DecimalField(max_digits=20, decimal_places=2);
     #NOTE FOR SELF - balance will act as the amount of cash funds in User's account
 
 
