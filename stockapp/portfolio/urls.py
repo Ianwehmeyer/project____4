@@ -4,5 +4,5 @@ from . import views
 urlpatterns = [
     path('', views.home),
     path('calc', views.calc),
-    path('ajaxform', views.ajaxform),
+    path('ajaxform', views.home),
 ]

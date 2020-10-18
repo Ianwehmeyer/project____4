@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CalcForm
-from .forms import AjaxForm 
+from .forms import MyAjaxForm 
 from .models import Account
 
 # Create your views here.
 def home(request):
-    myajaxform = AjaxForm()
+    myajaxform = MyAjaxForm()
     account = get_object_or_404( Account, pk=1)
     balance = account.balance
     context = { 'myajaxform' : myajaxform, 'username': 'Ian Studmeyer', 'balance' : balance}
