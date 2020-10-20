@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+    .leftside, .rightside{
+        height: 50vh;
+        width:100%;%
+    }
+    @media screen and (min-width:768px)
+    {
+        .leftside, .rightside {
+            height:100vh;
+        }
+    }
+    .leftside{
+        background:red;
+    }
+    .rightside{
+        background:blue;
+    }
+
+    </style>
     <title>Home Page (split screen to hold rest of data)</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script
@@ -10,7 +29,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
     <body>
-        <h1>{{username}} Account Balance ${{balance}}</h1>
+        <div class="row no-gutters">
+            <div class="col-md-6 no-gutters">
+                <div class="leftside"></div>
+            </div>
+                
+            <div class="col-md-6 no-gutters">
+                <div class="rightside"></div>
+            </div>
+                
+        </div>
+
+
+        <h1>{{username}} Account Balance ${{balance|floatformat:2}}</h1>
         <div>
             <a href="/calc">calc</a></div>
         </div>

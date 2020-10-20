@@ -10,6 +10,7 @@ def home(request):
     myajaxform = MyAjaxForm()
     account = get_object_or_404( Account, pk=1)
     balance = account.balance
+    print(balance)
     context = { 'myajaxform' : myajaxform, 'username': 'Ian Studmeyer', 'balance' : balance}
     return render( request, 'portfolio/home.html', context)
 
